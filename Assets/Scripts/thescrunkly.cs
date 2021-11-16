@@ -99,6 +99,33 @@ public class thescrunkly : MonoBehaviour
         trigAppliedVelocity = new Vector3(velocity.x * Mathf.Cos(currentZRotation) - velocity.y * Mathf.Sin(currentZRotation), velocity.y * Mathf.Cos(currentZRotation) - velocity.x * Mathf.Sin(currentZRotation), 0);
 
         c_rigidbody.MovePosition(transform.position + trigAppliedVelocity * Time.fixedDeltaTime);
+    }
 
+    public void ChangeColour(string colour)
+    {
+        if(colour == "Red")
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            transform.Rotate(0, 0, 0, Space.World);
+        }
+        else if(colour == "Blue")
+        {
+            GetComponent<SpriteRenderer>().color = Color.blue;
+            transform.Rotate(0, 0, 90, Space.World);
+        }
+        else if (colour == "Green")
+        {
+            GetComponent<SpriteRenderer>().color = Color.green;
+            transform.Rotate(0, 0, 180, Space.World);
+        }
+        else if (colour == "Yellow")
+        {
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            transform.Rotate(0, 0, 270, Space.World);
+        }
+        else
+        {
+            Debug.Log("You are dumb");
+        }
     }
 }
